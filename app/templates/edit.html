@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Flash Card</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <div>
+      {{ form.english_word.label }} {{ form.english_word }}
+    </div>
+    <div>
+      {{ form.translation.label }} {{ form.translation }}
+    </div>
+    <div>
+      {{ form.category.label }} {{ form.category }}
+    </div>
+    <div>
+      {{ form.submit }}
+    </div>
+  </form>
+{% endblock %}

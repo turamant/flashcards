@@ -1,5 +1,4 @@
-migrations
+.idea
 .venv
+__pycache__
 app.db
-*.pyc
-app/templates
