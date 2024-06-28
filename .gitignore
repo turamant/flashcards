@@ -2,3 +2,5 @@
 .venv
 __pycache__
 app.db
+migrations
+app/templates
