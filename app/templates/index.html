@@ -37,10 +37,10 @@
           <td>{{ card.translation }}</td>
           <td>{{ card.category }}</td>
           <td>
-            <a href="{{ url_for('edit', id=card.id) }}">Edit</a>
-            <a href="{{ url_for('delete', id=card.id) }}">Delete</a>
-            <a href="{{ url_for('study') }}">Study</a>
-            <a href="{{ url_for('test') }}">Test</a>
+            <a href="{{ url_for('main.edit', id=card.id) }}">Edit</a>
+            <a href="{{ url_for('main.delete', id=card.id) }}">Delete</a>
+            <a href="{{ url_for('main.study') }}">Study</a>
+            <a href="{{ url_for('main.test') }}">Test</a>
           </td>
         </tr>
       {% endfor %}

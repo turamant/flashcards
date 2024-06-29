@@ -1,18 +1,17 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from app.extensions import db, migrate
+from app.main.views import main_bp
 
 
-app = Flask(__name__)
-app.config.from_object('config')
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config')
 
-from app.models import *
-from app.forms import *
-from app.views import *
+    db.init_app(app)
+    migrate.init_app(app, db)
 
-if __name__ == '__main__':
-    app.run()
+    app.register_blueprint(main_bp, url_prefix='')
+
+    return app
 
 
